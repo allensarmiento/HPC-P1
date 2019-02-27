@@ -24,9 +24,18 @@
             send value to next rank
         else: 
             send previous rank value
+    if rank == 1:
+        receive value from previous rank
+        if is max odd: 
+            send value to next rank
+        else:
+            send previous rank value
+        if is max even:
+            send value to next rank
+        else: 
+            send previous rank value
     
-    Repeat for other ranks
-
+    REPEAT FOR OTHER RANKS 
     # Final Step
     if rank == 0:
         print the value sent to it 
