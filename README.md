@@ -9,10 +9,24 @@
 - Ryan Shim (rcshim@csu.fullerton.edu)
 
 ### Pseudocode:
-    Create a process with N ranks.  
-    Assign random values to each rank.
-    Start from process 0:
-      - For odd election: the max odd number gets sent to the next rank.
-      - For even election: the max even number gets sent to the next rank.
-    Process 0 should end up with the largest odd/even number.
+    # Initializtion
+    Create process with N ranks
+    number = new Random Number
+    number = '1' + rank + number
+    
+    # Passing values between ranks
+    if rank == 0: 
+        if is max odd: 
+            send value to next rank
+        else:
+            send previous rank value
+        if is max even:
+            send value to next rank
+        else: 
+            send previous rank value
+    
+    Repeat for other ranks
 
+    # Final Step
+    if rank == 0:
+        print the value sent to it 
