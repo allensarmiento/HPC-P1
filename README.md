@@ -8,3 +8,11 @@
 - Allen Sarmiento (allensarmiento@csu.fullerton.edu)
 - Ryan Shim (rcshim@csu.fullerton.edu)
 
+### Pseudocode:
+    Create a process with N ranks.  
+    Assign random values to each rank.
+    Start from process 0:
+      - For odd election: the max odd number gets sent to the next rank.
+      - For even election: the max even number gets sent to the next rank.
+    Process 0 should end up with the largest odd/even number.
+
