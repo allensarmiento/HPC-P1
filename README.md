@@ -36,6 +36,7 @@
             send previous rank value
     
     REPEAT FOR OTHER RANKS 
+
     # Final Step
     if rank == 0:
         print the value sent to it 
