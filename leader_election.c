@@ -1,11 +1,15 @@
-// Run alpine-mpich container: docker run --rm -it -v $(pwd):/project nlknguyen/alpine-mpich
+// Names: Andrew Lopez, Allen Sarmiento, Ryan Shim
+// Course: CPSC 479 - Intro to HPC
+// Suject: Project 1 - Ring Leader Election
+// Last Updated: 2-28-2019
 //
-// position[0] = president max value 
-// position[1] = vice max value
+// NOTES:
+//  - Run alpine-mpich container in docker:
+//      docker run --rm -it -v $(pwd):/project nlknguyen/alpine-mpich
 //
-// TODO:
-//  - Convert program to send only 2 numbers
-//  - Have current president and vice president ranks shared b/t all processes?
+//  - Position buffer format:
+//      - position[0] = president max value 
+//      - position[1] = vice max value
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -52,7 +56,7 @@ int main(int argc, char* argv[]) {
             token += 10;
         token = 1000 + (rank*100) + token;
 
-        // init election values
+        // Init election values
         if (token % 2 == 0) {
             positions[0] = token;
             positions[1] = 1;
@@ -81,7 +85,7 @@ int main(int argc, char* argv[]) {
             positions[1] = token;
         }
 
-        // determine president and vice ranks
+        // Determine president and vice ranks
         int p_rank = positions[0] / 100 - 10;
         int v_rank = positions[1] / 100 - 10;
         printf("\nPresident Value: %d\nVice Value: %d\n", 
