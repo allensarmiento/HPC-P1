@@ -10,8 +10,9 @@
 
 ### Pseudocode:
     /* This program sends the maximum odd/even value in a ring-like fashion.
-     * Each rank receives a value and determines which value should be sent to
-     * the next rank. This process repeats until we get back to rank 0.
+     * Each rank receives two values and depending on whether or not the RNG
+     * token is odd or even, the process sends it's values to the next process.
+     * This repeats for every non-zero rank until we get back to rank 0.
      * Constraints: The value must be from 10-100. 
      *              The number of ranks will be from 6-20.
      */
