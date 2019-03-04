@@ -1,7 +1,7 @@
 // Names: Andrew Lopez, Allen Sarmiento, Ryan Shim
 // Course: CPSC 479 - Intro to HPC
-// Suject: Project 1 - Ring Leader Election
-// Last Updated: 2-28-2019
+// Subject: Project 1 - Ring Leader Election
+// Last Updated: 3-03-2019
 //
 // NOTES:
 //  - Run alpine-mpich container in docker:
