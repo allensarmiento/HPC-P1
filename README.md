@@ -9,13 +9,13 @@
 - Ryan Shim (rcshim@csu.fullerton.edu)
 
 ### Description
-/* This ring communication example will send two values through several processes until
+This ring communication example will send two values through several processes until
 they get back to the first process of rank 0. Each process generates a random value that
 can either be even or odd. The program keeps track of "president" and "vice" values
 which are the largest even value and the largest odd value respectively. The program
 compares both values at each rank and swaps one if it is greater than the current
 president or vice. The last two values received back to process 0  will be the
-greatest odd and even values from all of the processes. */
+greatest odd and even values from all of the processes. 
 
 ### Pseudocode:
     /* This program sends the maximum odd/even value in a ring-like fashion.
