@@ -15,7 +15,7 @@ can either be even or odd. The program keeps track of "president" and "vice" val
 which are the largest even value and the largest odd value respectively. The program
 compares both values at each rank and swaps one if it is greater than the current
 president or vice. The last two values received back to process 0  will be the
-greatest odd and even values from all of the processes. 
+greatest odd and even values from all of the processes.
 
 ### Pseudocode:
     /* This program sends the maximum odd/even value in a ring-like fashion.
@@ -32,28 +32,40 @@ greatest odd and even values from all of the processes.
     number = '1' + rank + number
 
     // Passing values between ranks
-    if rank == 0:
-        if is max odd:
-            send value to next rank
-        else:
-            send previous rank value
-        if is max even:
-            send value to next rank
-        else:
-            send previous rank value
-    if rank == 1:
-        receive value from previous rank
-        if is max odd:
-            send value to next rank
-        else:
-            send previous rank value
-        if is max even:
-            send value to next rank
-        else:
-            send previous rank value
+    if rank != 0
+      receive values
+      print values
 
+      create random token value for each rank
+
+      print token value
+
+      if is max even:
+          set value as president
+
+      if is max odd:
+          set value as vice
+
+    else
+      create random token value for each rank
+      if is even:
+          set value as president
+
+      if is odd:
+          set value as vice
+      print  process 0 token value
+
+    send president and vice to next process
     // REPEAT FOR OTHER RANKS
 
-    // Final Step
-    if rank == 0:
-        print the value sent to it
+    //final step
+    if rank == 0
+      receive president and vice values
+      print president and vice values
+      if is max even:
+          set value as president
+
+      if is max odd:
+          set value as vice
+      print president and vice values
+      print president/vice processes
