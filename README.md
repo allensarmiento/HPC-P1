@@ -31,9 +31,9 @@ Example: Process of rank 3 receives 1181 and 1214.
          Process of rank 3 sends 1181 and 1214 to next process.    
 
 ### How to Execute:
-Compile: mpicc leader_election.c
-Execute: mpirun -np <N> ./a.out
-  - The value of N will be between 6 and 20.
+Compile: mpicc leader_election.c  
+Execute: mpirun -np <N> ./a.out  
+  - The value of N will be between 6 and 20.  
 
 ### Pseudocode:
     /* This program sends the maximum odd/even value in a ring-like fashion.
