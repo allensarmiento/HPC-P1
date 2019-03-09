@@ -9,24 +9,24 @@
 - Ryan Shim (rcshim@csu.fullerton.edu)
 
 ### Description
-This ring communication example will send two values through several processes until
-they get back to the first process of rank 0. Each process generates a random value that
-can either be even or odd. The program keeps track of "president" and "vice" values
-which are the largest even value and the largest odd value respectively. The program
-compares both values at each rank and swaps one if it is greater than the current
-president or vice. The last two values received back to process 0  will be the
-greatest odd and even values from all of the processes.
+This ring communication example will send two values through several processes until  
+they get back to the first process of rank 0. Each process generates a random value that  
+can either be even or odd. The program keeps track of "president" and "vice" values  
+which are the largest even value and the largest odd value respectively. The program  
+compares both values at each rank and swaps one if it is greater than the current  
+president or vice. The last two values received back to process 0  will be the  
+greatest odd and even values from all of the processes.  
 
 ### Design Implementation
 Process of rank 0 generates a random number from 10-99. Two numbers are added before it  
 to represent the rank.  
-Example: Process of rank 5 generates a random number of 25.
-         Value assigned to rank 5 is 1525.
+Example: Process of rank 5 generates a random number of 25.  
+         Value assigned to rank 5 is 1525.  
 As the even and odd values get passed on to each process, the value being compared are the  
-last two digits. So, we consider 1151 > 1531 because 51 > 31.
+last two digits. So, we consider 1151 > 1531 because 51 > 31.  
 Example: Process of rank 3 receives 1181 and 1214.  
          Process of rank 3 generates a random number of 1321.  
-         Process of rank 3 sends 1181 and 1214 to next process.  
+         Process of rank 3 sends 1181 and 1214 to next process.    
 
 ### Pseudocode:
     /* This program sends the maximum odd/even value in a ring-like fashion.
